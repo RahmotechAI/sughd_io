@@ -229,14 +229,21 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
   .ncta { font-size: 12px; padding: 9px 18px; }
 
   /* HERO */
-  .hero { padding: 100px 24px 120px; min-height: 100svh; }
-  .hero-h1 { font-size: clamp(32px, 8vw, 48px); }
-  .hero-desc { font-size: 15px; }
+  .hero { padding: 90px 24px 48px; min-height: auto; flex-direction: column; justify-content: flex-start; gap: 0; }
+  .hero-h1 { font-size: clamp(30px, 8vw, 44px); }
+  .hero-desc { font-size: 14px; margin-bottom: 32px; }
   .hero-btns { flex-direction: column; gap: 12px; width: 100%; }
   .btn-p, .btn-s { width: 100%; text-align: center; padding: 15px 24px; }
-  .hero-statbar { flex-wrap: wrap; }
-  .hstat { padding: 16px 24px; flex: 1 1 45%; border-right: none; border-top: 1px solid rgba(255,255,255,.07); }
-  .hstat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+  .hero-statbar { position: static; display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin-top: 40px; border-top: 1px solid rgba(255,255,255,.1); border-left: 1px solid rgba(255,255,255,.07); }
+  .hstat { padding: 20px 12px; text-align: center; border-right: 1px solid rgba(255,255,255,.07); border-top: none; border-bottom: 1px solid rgba(255,255,255,.07); flex: none; }
+  .hstat-n { font-size: 28px; }
+  .hstat-l { font-size: 9px; }
+
+  /* HERO EYEBROW */
+  .hero-eyebrow { font-size: 10px; letter-spacing: 2px; flex-wrap: wrap; justify-content: center; text-align: center; margin-bottom: 20px; }
+  .hero-eyebrow::before, .hero-eyebrow::after { display: none; }
+  .hero-content { width: 100%; }
+  .hero-divider { animation: none; width: 120px; }
 
   /* TAG STRIP */
   .tag-strip { display: none; }
@@ -298,8 +305,9 @@ footer{background:var(--navy2);border-top:1px solid rgba(255,255,255,.06);paddin
 
 @media (max-width: 420px) {
   .hero-h1 { font-size: 30px; }
-  .hero-statbar { flex-direction: column; }
-  .hstat { border-right: none !important; border-top: 1px solid rgba(255,255,255,.07); padding: 14px 20px; }
+  .hero-statbar { grid-template-columns: 1fr 1fr; }
+  .hstat { padding: 14px 8px; }
+  .hstat-n { font-size: 24px; }
   .proj-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .iname { font-size: 28px; }
